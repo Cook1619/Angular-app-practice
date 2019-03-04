@@ -11,6 +11,11 @@ export class UserComponent {
   firstName = 'John';
   lastName = 'Doe';
   age = 30;
+  address = {
+    street: '123 Main St',
+    city: 'Mayer',
+    state: 'Minnesota'
+  };
   // runs automatically when object is instanciated
   constructor() {
     this.sayHello();
