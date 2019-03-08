@@ -3,7 +3,7 @@
   <li *ngFor="let user of users">
     <h3>{{ user.firstName }} {{user.lastName}}</h3>
 
-    <ul *ngIf="showExtended">
+    <ul *ngIf="showExtended && user.age && user.address">
       <li>Age: {{ user.age }}</li>
       <li>Street: {{ user.address.street }}</li>
       <li>City: {{ user.address.city }}</li>
@@ -14,5 +14,5 @@
 
 <ng-template <div id="noUsers">
   <h4>No Users Found</h4>
-</div></ng-template>
+</ng-template>
 <!-- <h4 *ngIf="users.length == 0">No Users Found</h4> -->
