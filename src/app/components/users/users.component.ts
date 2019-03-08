@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../models/User';
+
+import { User } from '../../models/User'; 
 
 @Component({
   selector: 'app-users',
@@ -7,58 +8,61 @@ import { User } from '../../models/User';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
   users: User[];
   showExtended: boolean = true;
-  enableAdd: boolean = true;
+  loaded: boolean = false;
+  enableAdd: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
-    this.users = [
-      {
-        firstName: 'John',
-        lastName: 'Doe',
-        age: 32,
-        address: {
-          street: '123 Main Street',
-          city: 'Mayer',
-          state: 'MN'
+   
+      this.users = [
+        {
+          firstName: 'Matt',
+          lastName: 'Cook',
+          age: 32,
+          address: {
+            street: '50 Main st',
+            city: 'Mayer',
+            state: 'MN'
+          },
+          image: 'http://lorempixel.com/600/600/people/6'
         },
-        image: 'http://lorempixel.com/600/600/people/3'
-      },
-      {
-        firstName: 'Matt',
-        lastName: 'Cook',
-        age: 32,
-        address: {
-          street: '123 Pinecone Street',
-          city: 'Mayer',
-          state: 'MN'
+        {
+          firstName: 'Danelle',
+          lastName: 'Cook',
+          age: 34,
+          address: {
+            street: '20 School st',
+            city: 'Mayer',
+            state: 'MN'
+          },
+          image: 'http://lorempixel.com/600/600/people/8'
         },
-        image: 'http://lorempixel.com/600/600/people/2'
-      },
-      {
-        firstName: 'Jim',
-        lastName: 'Bob',
-        age: 32,
-        address: {
-          street: '123 Hillbilly Street',
-          city: 'Mayer',
-          state: 'MN'
-        },
-        image: 'http://lorempixel.com/600/600/people/1'
-      }
-    ];
+        {
+          firstName: 'Mike',
+          lastName: 'Williams',
+          age: 26,
+          address: {
+            street: '55 Mill st',
+            city: 'Montrose',
+            state: 'MN'
+          },
+          image: 'http://lorempixel.com/600/600/people/9'
+        }
+      ];
 
-    this.addUser({
-      firstName: 'David',
-      lastName: 'Bo',
-      age: 31,
-    })
+      this.loaded = true;
+
+      // this.addUser({
+      //   firstName: 'David',
+      //   lastName: 'Jackson'
+      // });
   }
 
-    addUser(user: User) {
-      this.users.push(user);
-    }
+  addUser(user: User) {
+    this.users.push(user);
+  }
+  
 }
