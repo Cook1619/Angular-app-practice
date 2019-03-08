@@ -10,6 +10,7 @@ export class UsersComponent implements OnInit {
 
   users: User[];
   showExtended: boolean = true;
+  enableAdd: boolean = true;
 
   constructor() { }
 
@@ -23,7 +24,8 @@ export class UsersComponent implements OnInit {
           street: '123 Main Street',
           city: 'Mayer',
           state: 'MN'
-        }
+        },
+        image: 'http://lorempixel.com/600/600/people/3'
       },
       {
         firstName: 'Matt',
@@ -33,7 +35,8 @@ export class UsersComponent implements OnInit {
           street: '123 Pinecone Street',
           city: 'Mayer',
           state: 'MN'
-        }
+        },
+        image: 'http://lorempixel.com/600/600/people/2'
       },
       {
         firstName: 'Jim',
@@ -43,7 +46,8 @@ export class UsersComponent implements OnInit {
           street: '123 Hillbilly Street',
           city: 'Mayer',
           state: 'MN'
-        }
+        },
+        image: 'http://lorempixel.com/600/600/people/1'
       }
     ];
 
